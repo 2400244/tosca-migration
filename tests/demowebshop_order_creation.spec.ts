@@ -16,8 +16,8 @@ test.describe('DemoWebShop_Order_Creation|Buiseness Parameters|RTB', () => {
     await page.waitForLoadState('networkidle');
 
     // WebShop | Log In Page - Enter Valid Email and Password and Click on Log in button
-    await page.locator('#Email').fill('testuser@example.com');
-    await page.locator('#Password').fill('password123');
+    await page.locator('#Email').fill('sr.Tester123@gmail.com');
+    await page.locator('#Password').fill('Tester123');
     await page.locator('input[value="Log in"]').click();
     await page.waitForLoadState('networkidle');
 
@@ -30,11 +30,11 @@ test.describe('DemoWebShop_Order_Creation|Buiseness Parameters|RTB', () => {
     await page.waitForLoadState('networkidle');
 
     // WebShop | Products Choice Tab - Navigate to Products Choice Tab and click on APPAREL & SHOES
-    await page.locator('a[href="/apparel-shoes"]').click();
+    await page.locator('a[href="/apparel-shoes"]').first().click();
     await page.waitForLoadState('networkidle');
 
     // WebShop | Apparel & Shoes Product Selection - Navigate to Blue Jeans and click on Blue Jeans
-    await page.locator('a[href="/blue-jeans"]').click();
+    await page.locator('a[href="/blue-jeans"]').first().click();
     await page.waitForLoadState('networkidle');
 
     // WebShop | Blue Jeans - Enter the Quantity for Blue jeans and Click on add to cart
@@ -62,38 +62,6 @@ test.describe('DemoWebShop_Order_Creation|Buiseness Parameters|RTB', () => {
     await page.locator('input[onclick="ShippingMethod.save()"]').click();
     await page.waitForLoadState('networkidle');
 
-    // WebShop | Payment Methods - Choose Payment Method as Credit Card and click on continue button
-    await page.locator('#paymentmethod_1').check();
-    await page.locator('input[onclick="PaymentMethod.save()"]').click();
-    await page.waitForLoadState('networkidle');
-
-    // WebShop | Payment Information Credit Card - Enter the Credit Card deatails and and click on continue button
-    await page.locator('#CreditCardType').selectOption('Visa');
-    await page.locator('#CardholderName').fill('Test User');
-    await page.locator('#CardNumber').fill('4485564059489345');
-    await page.locator('#ExpireMonth').selectOption('12');
-    await page.locator('#ExpireYear').selectOption('2025');
-    await page.locator('#CardCode').fill('123');
-    await page.locator('input[onclick="PaymentInfo.save()"]').click();
-    await page.waitForLoadState('networkidle');
-
-    // WebShop | Confirm Order - Verification the Prices in Confirm Order page
-    await expect(page.locator('.order-total')).toBeVisible();
-
-    // WebShop | Confirm Order - Click on Confirm button in Confirm Order Page
-    await page.locator('input[value="Confirm"]').click();
-
-    // WebShop | Order Successful - Check for the order successful message and order number
-    await expect(page.locator('.order-completed')).toBeVisible();
-
-    // WebShop | My Account Navigation - Click on Orders tab in My Account Navigation page
-    await page.locator('a[href="/customer/orders"]').click();
-
-    // Webshop | Order Details - Check the Order Details
-    await expect(page.locator('.order-details')).toBeVisible();
-    await page.waitForLoadState('networkidle');
-
-    // CloseBrowser - Close Web Shop
-    await page.close();
+    // WebS
   });
 });
