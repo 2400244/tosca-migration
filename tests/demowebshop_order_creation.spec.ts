@@ -34,7 +34,7 @@ test.describe('DemoWebShop_Order_Creation|Buiseness Parameters|RTB', () => {
     await page.waitForLoadState('networkidle');
 
     // WebShop | Apparel & Shoes Product Selection - Navigate to Blue Jeans and click on Blue Jeans
-    await page.locator('a[href="/blue-jeans"]').first().click();
+    await page.getByText('Blue Jeans').click();
     await page.waitForLoadState('networkidle');
 
     // WebShop | Blue Jeans - Enter the Quantity for Blue jeans and Click on add to cart
@@ -61,7 +61,5 @@ test.describe('DemoWebShop_Order_Creation|Buiseness Parameters|RTB', () => {
     await page.locator('#shippingoption_0').check();
     await page.locator('input[onclick="ShippingMethod.save()"]').click();
     await page.waitForLoadState('networkidle');
-
-    // WebS
   });
 });
