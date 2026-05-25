@@ -34,7 +34,7 @@ test.describe('DemoWebShop_Order_Creation|Buiseness Parameters|RTB', () => {
     await page.waitForLoadState('networkidle');
 
     // WebShop | Apparel & Shoes Product Selection - Navigate to Blue Jeans and click on Blue Jeans
-    await page.getByText('Blue Jeans').click();
+    await page.getByRole('link', { name: 'Blue Jeans', exact: true }).click();
     await page.waitForLoadState('networkidle');
 
     // WebShop | Blue Jeans - Enter the Quantity for Blue jeans and Click on add to cart
