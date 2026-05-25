@@ -42,7 +42,7 @@ test.describe('DemoWebShop_Order_Creation|Buiseness Parameters|RTB', () => {
     await page.locator('#add-to-cart-button-36').click();
 
     // WebShop | Shopping Cart - Enter the discount code, click on 'Apply Coupon', check the 'Terms and Conditions' checkbox, and then click on the 'Checkout' button
-    await page.locator('.cart-label').click();
+    await page.getByRole('link', { name: 'Shopping cart' }).click();
     await page.locator('#discountcouponcode').fill('DISCOUNT10');
     await page.locator('input[name="applydiscountcouponcode"]').click();
     await page.locator('#termsofservice').check();
